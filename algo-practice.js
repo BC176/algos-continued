@@ -54,12 +54,27 @@ const newArr = [2,3,4,5];
 //     arr[index] = val;
 // }
 
-const insertAt = (arr,index, newNum) => {
-    for (var x = arr.length - 1; x >= 0; x--){
-        arr[x + 1] = arr[x];
-        console.log(arr[x]);
+// const insertAt = (arr, index, newNum) => {
+//     for (var x = arr.length - 1; x >= 0; x--){
+//         // arr[index] = newNum;
+//         arr[x + 1] = arr[x];
+//         console.log(arr[x]);
+//     }
+//     arr[index] = newNum;
+// }
+
+const insertAt = (arr, index, newNum) => {
+    newArr2 = [];
+    for(var x = 0; x < arr.length; x--) {
+        if (x < index) {
+            newArr2.push(arr);
+        } else if (x == index) {
+            newArr2.push(newNum);
+        } else {
+            newArr2.push(arr);
+        }
+        return newArr2;
     }
-    arr[index] = newNum;
 }
 
 console.log(insertAt(newArr, 1, 8));
